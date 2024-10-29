@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f088868c-7f8c-40e6-92f7-d413209c2121" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/life-sim.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animal.py" afterDir="false" />
+    <list default="true" id="f088868c-7f8c-40e6-92f7-d413209c2121" name="Changes" comment="I redid the main file, and moved most of the simulation code to simulation.py. main.py is still the runnable file. Let me know if you have any questions about what stuff does, I tried to use lots of comments lol. If you'd like to I think it would be good to make all the animals inherit from a main class too, and then have Carnivore and Herbivore classes that inherit and override certain methods.">
       <change afterPath="$PROJECT_DIR$/src/simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/carnivore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/carnivore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/herbivore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/herbivore.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -46,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "suggested-revisions",
+    "ignore.virus.scanning.warn.message": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,6 +64,19 @@
       <option name="presentableId" value="Default" />
       <updated>1730165246601</updated>
     </task>
+    <task id="LOCAL-00001" summary="I redid the main file, and moved most of the simulation code to simulation.py. main.py is still the runnable file. Let me know if you have any questions about what stuff does, I tried to use lots of comments lol. If you'd like to I think it would be good to make all the animals inherit from a main class too, and then have Carnivore and Herbivore classes that inherit and override certain methods.">
+      <option name="closed" value="true" />
+      <created>1730227829492</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730227829492</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I redid the main file, and moved most of the simulation code to simulation.py. main.py is still the runnable file. Let me know if you have any questions about what stuff does, I tried to use lots of comments lol. If you'd like to I think it would be good to make all the animals inherit from a main class too, and then have Carnivore and Herbivore classes that inherit and override certain methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="I redid the main file, and moved most of the simulation code to simulation.py. main.py is still the runnable file. Let me know if you have any questions about what stuff does, I tried to use lots of comments lol. If you'd like to I think it would be good to make all the animals inherit from a main class too, and then have Carnivore and Herbivore classes that inherit and override certain methods." />
   </component>
 </project>

@@ -1,7 +1,5 @@
-import pygame
-from random import randint as rand
-import math as m
-import time as t
+import pygame, random, math, time
+from django.utils.timezone import override
 
 SCREEN_WIDTH = 1000 # Constants for the size of the ecosystem window.
 SCREEN_HEIGHT = 750
@@ -16,22 +14,23 @@ class Carnivore(pygame.sprite.Sprite):
         super(Carnivore, self).__init__() # Sets up the visual aspects of the carnivore.
         self.surf = pygame.Surface((50, 50))
         self.rect = self.surf.get_rect()
-        self.dir = rand(0, 179)
-        self.life = t.time()
+        self.dir = random.randint(0, 179)
+        self.life = time.time()
         if parent != None: # Sets up traits inherited from the organism's parent.
-            self.speed = rand(parent.speed - 2, parent.speed + 2) # Sets the speed the organism moves.
-            self.life_span = rand(parent.life_span - 10, parent.life_span +10) # Sets the lifespan of the organism.
+            self.speed = random.randint(parent.speed - 2, parent.speed + 2) # Sets the speed the organism moves.
+            self.life_span = random.randint(parent.life_span - 10, parent.life_span +10) # Sets the lifespan of the organism.
             # NOT YET WORKING: Moves child to parent's position on initialization.
             self.rect.center = parent.rect.center
         else: # Does the same using base metrics for the initial organisms.
-            self.speed = rand(2, 5)
-            self.life_span = rand(10, 30)        
-        
+            self.speed = random.randint(2, 5)
+            self.life_span = random.randint(10, 30)        
+
+    @override
     def update(self):
-        if rand(1, 20) == 20: # Updates the position of the sprite.
-            self.dir += rand(-45, 45)
-        x_update = m.cos(self.dir*(m.pi/180))*self.speed
-        y_update = m.sin(self.dir*(m.pi/180))*self.speed
+        if random.randint(1, 20) == 20: # Updates the position of the sprite.
+            self.dir += random.randint(-45, 45)
+        x_update = math.cos(self.dir*(math.pi/180))*self.speed
+        y_update = math.sin(self.dir*(math.pi/180))*self.speed
         self.rect.move_ip(x_update, y_update)
         if self.rect.left < 0:
             self.rect.left = 0
@@ -45,7 +44,7 @@ class Carnivore(pygame.sprite.Sprite):
         if self.rect.bottom >= SCREEN_HEIGHT:
             self.rect.bottom = SCREEN_HEIGHT
             self.dir += 180
-        if t.time()-self.life >= self.life_span: # Checks if the organism has exceeded its lifespan.
+        if time.time()-self.life >= self.life_span: # Checks if the organism has exceeded its lifespan.
             self.kill()
 
         
@@ -71,13 +70,13 @@ class FemaleCarn(Carnivore):
         if pygame.sprite.spritecollideany(self, male_carns): # Check whether organism has become pregnant.
             if not self.pregnant:
                 self.pregnant = True
-                self.conception = t.time()
-                self.due = rand(2, 7)
-        if self.pregnant and t.time()-self.conception >= self.due: # Check whether baby is due.
+                self.conception = time.time()
+                self.due = random.randint(2, 7)
+        if self.pregnant and time.time()-self.conception >= self.due: # Check whether baby is due.
             self.birth()        
 
     def birth(self): # Dynamic creation of new organisms.
-        if rand(1, 7) < 4: # Female organisms are slightly(25%) more common.
+        if random.randint(1, 7) < 4: # Female organisms are slightly(25%) more common.
             new_carn = MaleCarn(parent=self) # Create a new male carnivore
             male_carns.add(new_carn)
             carnivores.add(new_carn)

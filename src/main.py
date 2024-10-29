@@ -4,13 +4,11 @@
 # It imports simulation.py and then creates an instance of a sim.
 
 import simulation
-from src.carnivore import MaleCarn, FemaleCarn
-from src.herbivore import MaleHerb, FemaleHerb
+import carnivore
 
 # Make an instance of a simulation
 sim = simulation.Simulation()
 sim.display_init(800, 600) # width and height, leave gui blank if you want a window
-sim.run() # leave speed blank for 1x speed
 
 # HEADS UP: I only changed the main simulation code, I haven't done much
 # any work on the actual entities yet. But I'm thinking it would make
@@ -22,12 +20,19 @@ sim.run() # leave speed blank for 1x speed
 # I THINK YOU CAN OVERRIDE THE UPDATE AND DRAW METHODS AS WELL AS HAVE
 # ACCESS TO THE groupCollide METHOD FOR INTERACTIONS.
 
-tiger = MaleCarn() # Initialize the starting organisms.
-tigress = FemaleCarn()
-buck = MaleHerb()
-doe = FemaleHerb()
+# Initialize the starting organisms.
+tiger = carnivore.Carnivore(300, 350, 60, 60, 20, "male")
+tiger.image.fill((255, 0, 0)) # red for male
+tigress = carnivore.Carnivore(100, 500, 50, 50, 22, "female")
+tigress.image.fill((0, 0, 255)) # blue for female
+# buck = MaleHerb()
+# doe = FemaleHerb()
 
 sim.carnivores.add(tiger)
 sim.carnivores.add(tigress)
-sim.herbivores.add(buck)
-sim.herbivores.add(doe)
+# sim.carnivores.add(tigress)
+# sim.herbivores.add(buck)
+# sim.herbivores.add(doe)
+
+
+sim.run() # leave speed blank for 1x speed

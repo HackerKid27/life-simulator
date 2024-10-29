@@ -4,9 +4,6 @@
 
 import pygame
 
-from src.carnivore import carnivores
-from src.herbivore import herbivores
-
 
 # This is basically just the entire main file in a class to keep it clean,
 # and also this would allow for parallel simulations via the threading
@@ -28,6 +25,7 @@ class Simulation:
         # having more control over how they handle checks for collision, etc.
         # (also I've never rly used sprite groups before so this is probably mostly preference lol)
         self.carnivores = pygame.sprite.Group()
+
         self.herbivores = pygame.sprite.Group()
 
 
@@ -82,6 +80,6 @@ class Simulation:
         # I'm passing the screen instance to each carnivore object so you can reuse
         # the drawing code in the carnivore class. This will make it easier to made
         # updates to the drawing code, and to find it as the project grows.
-        carnivores.draw(self.screen)
-        herbivores.draw(self.screen)
+        self.carnivores.draw(self.screen)
+        self.herbivores.draw(self.screen)
         pygame.display.update() # Update and flip are basically the same
